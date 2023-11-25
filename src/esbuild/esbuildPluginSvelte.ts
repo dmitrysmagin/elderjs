@@ -9,7 +9,7 @@ import crypto from 'crypto';
 import fs from 'fs-extra';
 
 // eslint-disable-next-line import/no-unresolved
-import { PreprocessorGroup } from 'svelte/types/compiler/preprocess/types';
+import { PreprocessorGroup } from 'svelte/types/compiler/preprocess';
 import { resolveFn, minifyCss, transformFn, loadCss } from '../rollup/rollupPlugin';
 import { SettingsOptions } from '..';
 

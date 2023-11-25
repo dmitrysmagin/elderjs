@@ -32,7 +32,7 @@ export type HookOptions = {
   hook: Hook;
   name: string;
   description: string;
-  priority: Number;
+  priority: number;
   run: Run;
   $$meta?: {
     type: string;

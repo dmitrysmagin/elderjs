@@ -12,7 +12,7 @@ import path from 'path';
 import fs from 'fs-extra';
 
 // eslint-disable-next-line import/no-unresolved
-import { PreprocessorGroup } from 'svelte/types/compiler/preprocess/types';
+import { PreprocessorGroup } from 'svelte/types/compiler/preprocess';
 import esbuildPluginSvelte from './esbuildPluginSvelte';
 import { InitializationOptions, SettingsOptions } from '../utils/types';
 import { getElderConfig } from '..';

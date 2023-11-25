@@ -66,12 +66,10 @@ export const getCompilerOptions = ({ type }) => {
     generate: 'ssr',
     css: false,
     dev: isDev,
-    format: 'esm',
   };
 
   if (type === 'client') {
     compilerOptions.generate = 'dom';
-    compilerOptions.format = 'esm';
   }
 
   return compilerOptions;
@@ -130,12 +128,11 @@ export function transformFn({
       //   this.warn(warning);
       // });
 
-      const dependencies = getDependencies(id);
-      compiled.js.dependencies = [...dependencies, ...processed.dependencies];
+      const dependencies = [...getDependencies(id), ...processed.dependencies];
 
       if (this && this.addWatchFile) {
         this.addWatchFile(id);
-        compiled.js.dependencies.map((d) => this.addWatchFile(d));
+        dependencies.forEach((d) => this.addWatchFile(d));
       }
       if (type === 'ssr') {
         const css = {
